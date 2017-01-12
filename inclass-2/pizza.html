@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tong Zhou">
+	<title>Pizza Order Form</title>
+</head>
+
+<body>
+	<h1>Pizza Guys Order Form</h1>
+	<img src="https://s-media-cache-ak0.pinimg.com/736x/86/49/db/8649db95ca74d7719da6c5dce4648e2b.jpg" width="300px">
+	<form action="/formProcessor.html" method="get" id="usrform">
+		Name<br>
+		<input type="text" name="pizzaname" placeholder="your name" required>
+		<br>
+		<br>
+		Address: #### Street Name<br>
+		<input type="text" name="deliveryaddress" placeholder="delivery address" required>
+		<br>
+		<br>
+		Phone Number: 123-123-1234<br>
+		<input type="tel" pattern="^\d{3}-\d{3}-\d{4}$" name="phonenumber" placeholder="123-123-1234" required>
+		<br>
+		<br>
+		<U>Pizza size</U><br>
+		<input type="radio" name="size" value="Large">Large
+		<input type="radio" name="size" value="Medium">Medium
+		<input type="radio" name="size" value="Small">Small
+		<br>
+		<br>
+		<U>Pizza Toppings</U><br>
+		<input type="checkbox" name="topping" value="Sausage">Sausage
+		<input type="checkbox" name="topping" value="Pepperoni">Pepperoni
+		<input type="checkbox" name="topping" value="Olives">Olives
+		<input type="checkbox" name="topping" value="Anchovies">Anchovies
+		<input type="checkbox" name="topping" value="Onion">Onion
+		<br>
+		<br>
+		<input type="submit" name="submit" value="Place Order">
+		<input type="reset" name="reset" value="Clear">
+	</form>
+
+</body>
