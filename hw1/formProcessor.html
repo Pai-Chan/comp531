@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+	<meta name="author" content="Pei Chen">
+	<title>Simple Page - HW1</title>	
+</head>
+<body>
+	<h1>Registration Form Info:</h1>
+	<table id="info-table">
+		<tr>
+			<th>Key</th>
+			<th>Value</th>
+		</tr>
+
+	</table>
+	<script>
+		var params = new URLSearchParams(window.location.search);
+		console.log(params.get('zipcode'));
+
+		for (var pair of params.entries()) {
+
+			var keyth = document.createElement("th");
+
+			var keytext = document.createTextNode(pair[0]);
+
+			var valth = document.createElement("th");
+
+			var valtext = document.createTextNode(pair[1]);
+
+			if (pair[0] == "registration-timestamp") {
+				valtext = document.createTextNode(new Date(parseInt(pair[1])).toString());
+			}
+
+			keyth.appendChild(keytext);
+			valth.appendChild(valtext);
+
+			var tr = document.createElement("tr");
+			tr.appendChild(keyth);
+			tr.appendChild(valth);
+			var table = document.getElementById("info-table");
+			table.appendChild(tr);
+		}
+	</script>
+</body>

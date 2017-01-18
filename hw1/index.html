@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+	<meta name="author" content="Pei Chen">
+	<title>Simple Page - HW1</title>
+</head>
+<body onload="go()">
+	<form action="formProcessor.html" method="get" onsubmit="return validateForm()" id="usrform">
+		Account Name:
+		<input type="text" pattern="^[A-Za-z][A-Za-z0-9]*$" name="account-name" id="account-name" required oninvalid="this.setCustomValidity('A valid account name is needed here. Account name can only be upper or lower case letters and numbers, but may not start with a number.')" onchange="this.setCustomValidity('')">
+		<br>
+		Display Name:
+		<input type="text" name="display-name" id="display-name" placeholder="optional">
+		<br>
+		Email Address:
+		<input type="email" name="email" id="email" required>
+		<br>
+		Phone Number:
+		<input type="tel" pattern="^\d{3}-\d{3}-\d{4}$" name="phone-number" id="phone-number" required oninvalid="this.setCustomValidity('The phone number should be in this format XXX-XXX-XXXX, in which X is a digit.')" onchange="this.setCustomValidity('')">
+		<br>
+		Date of Birth:
+		<input type="date" name="date-of-birth" id="date-of-birth" onchange="validateBrithDate(this)" required>
+		<br>
+		Zip Code:
+		<input type="zipcode" pattern="^\d{5}$" name="zipcode" id="zipcode" oninvalid="this.setCustomValidity('The zip code should be in XXXXX format, in which X is a digit.')" onchange="this.setCustomValidity('')" required>
+		<br>
+		Password:
+		<input type="password" name="password" id="password" required>
+		<br>
+		Password Confirmation:
+		<input type="password" name="confirmpassword" id="confirmpassword" required>
+		<br>
+		<input type="hidden" name="registration-timestamp" id="registration-timestamp" required>
+		<input type="submit" name="submit" value="Click for Registration">
+		<input type="reset" name="reset" value="Clear the form">
+	</form>
+</body>
+
+<script>
+	function go() {
+		var curDate = new Date();
+		document.getElementById('registration-timestamp').value = curDate.getTime();
+	}
+	function validateForm() {
+		var dat = new Date();
+		var dat2 = new Date(document.getElementById('date-of-birth').value);
+		dat.setYear(dat.getFullYear() - 18);
+		if (dat2 > dat) {
+			alert("You are younger than 18. you cannot register.");
+			return false;
+		}
+		var pass1 = document.getElementById("password").value;
+		var pass2 = document.getElementById("confirmpassword").value;
+		if (pass1 != pass2) {
+			alert("Two passwords typed are not matched!")
+			return false;
+		}
+	}
+	function validateBrithDate(e) {
+		var dat = new Date();
+		var element = document.getElementById("date-of-birth");
+		var dat2 = new Date(element.value);
+		dat2.setYear(dat2.getFullYear() + 18);
+		if (dat2 > dat) {
+			e.setCustomValidity("You are younger than 18. you cannot register.");
+		} else {
+			e.setCustomValidity("");
+		}
+	}
+</script>

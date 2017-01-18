@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Hello HTML!</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Pei Chen">
+</head>
+
+<body onload="go()">
+
+<table border="1">
+	<tr><td>Athenian</td><td>Owl</td></tr>
+	<tr><td colspan="2"><img src="http://explore.rice.edu/uploadedImages/Explore/Welcome_to_Rice/riceacademicseal1.jpg"></td></tr>
+</table>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<ul>
+	<li><a href="http://www.rice.edu">Rice</a></li>
+	<li><a href="http://www.chron.com">Houston Chronicle</a></li>
+	<li><a href="http://www.twitter.com">Twitter</a></li>
+	<li><a href="http://www.twosigma.com">TwoSigma</a></li>
+</ul>
+
+<textarea rows="10" cols="50">
+If you press "Click to Clear Textarea,
+You will find that this area become empty.
+</textarea>
+
+<button onclick="clearText()">Click to Clear Textarea</button>
+
+<span id="indicator" onclick="startToCountDown()">15</span>
+
+<button onclick="myCountDownTimer.pauseCountDown()">Click to pause the countdown</button>
+
+<button onclick="myCountDownTimer.resumeCountDown()">Click to resume the countdown</button>
+
+<script>
+
+	var myCountDownTimer;
+	function go() {
+		setTimeout(alertUser, 5000);
+		myCountDownTimer = new countDownTimer()
+		myCountDownTimer.startToCountDown();
+	}
+
+	function alertUser() {
+		alert("The page will redirect when the counter reaches zero.");
+	}
+
+
+	function countDownTimer() {
+
+		this.id;
+
+		this.startToCountDown = function(intervalID) {
+			intervalID = setInterval(countDownAction, 1000);
+			this.id = intervalID;
+		}
+		this.pauseCountDown = function() {
+			if (this.id != undefined) {
+				clearInterval(this.id);
+			}
+		}
+		this.resumeCountDown = function() {
+			if (indicator.innerHTML > 0) {
+				this.id = setInterval(countDownAction, 1000);
+			} else {
+				alert("The countdown is already ended.");
+			}
+		}
+		function countDownAction() {
+			var indicator = document.getElementById("indicator");
+			indicator.innerHTML--;
+			if (indicator.innerHTML == 0) {
+				clearInterval(indicator);
+				window.location.href = "http://www.clear.rice.edu/comp431/sample/hello.html";
+			}
+		}
+	}
+
+
+
+
+	function clearText() {
+		var textareas = document.getElementsByTagName("textarea");
+		textareas[0].value = "";
+	}
+
+</script>
+
