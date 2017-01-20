@@ -1,0 +1,55 @@
+.greenBtn {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.greenBtn:hover {
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 5px 5px 0 rgba(0,0,0,0.19);
+}
+
+nav {
+	width: 100%;
+	height: 20px;
+	position: fixed;
+	top:0px;
+	left:0px;
+	background-color: #00FFFF;
+}
+
+.textareastyle {
+	border:2px solid green;
+	width:150px;
+	height:19px;
+	font-size:12px;
+	line-height:1.6;
+	margin-top: 1px;
+}
+
+body {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#feed > div {
+	background-color: #FCFEE3;
+	padding: 15px 15px 15px 15px;
+	margin: 15px 15px 15px 15px;
+	border: 2px solid green;
+	border-radius: 5px;
+}
+
+#feed > div > span {
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.24);
+}
+
+#feed > div:hover {
+	box-shadow: 0 6px 6px 6px rgba(0,0,0,0.24), 0 6px 6px 0 rgba(0,0,0,0.19);
+	background-color: #F3FBAC;
+	border: 2px solid #126E00;
+}
