@@ -1,4 +1,5 @@
 { 
-	"netid": "pc30",
-	"frontend": "rapid-tangram.surge.sh"
+    "netid": "pc30",
+    "title": "Rapid Tangram",
+    "site": "http://rapid-tangram.surge.sh/"
 }
