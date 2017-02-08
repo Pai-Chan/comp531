@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Main Page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="myStyle.css" rel="stylesheet" type="text/css"/>
+	<meta name="author" content="Pei Chen">
+</head>
+<body onload="loadRecords();introduceGame();">
+	<div id="infoboard">
+		<h1>Rapid Tangram</h1>
+		<p>See more information on Tangram: <a href="https://en.wikipedia.org/wiki/Tangram" target="_blank">Introduction to Tangram in Wikipedia</a></p>
+		<h2>Your records:</h2>
+		<p>Best performance for [ Easy ] mode is: <span id="easyrecord"></span></p>
+		<p>Best performance for [ Hard ] mode is: <span id="hardrecord"></span></p>
+		<p>If you want to clear your history, please click this button.<button id="clearBtn" onclick="clearRecords();loadRecords();">Clear!</button></p>
+		<h2>General Instructions:</h2>
+		<p>Drag those seven plates to form up the pattern displayed in the lower right corner.</p>
+		<p>You can drag a plate out of the upper boundary to rotate it. </p>
+		<p>Remember to hold on the plate and drag it back. Otherwise you will never win the game.</p>
+	</div>
+	<div id="svgcontainer""></div>
+	<script src="d3.min.js" charset="utf-8"></script>
+	<script src="rapidTangram.js" charset="utf-8"></script>
+	<script src="yourRecord.js" charset="utf-8"></script>
+</body>
+</html>

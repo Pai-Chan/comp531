@@ -1,0 +1,17 @@
+{
+  "name": "Rapid-Tangram",
+  "version": "1.0.0",
+  "description": "Assignment3 of COMP531(17 Spring)",
+  "main": "./index.html",
+  "scripts": {
+    "deploy": "surge -p dist",
+    "start": "cd dist && (python -m SimpleHTTPServer 8080 || python -m http.server 8080)"
+  },
+  "author": "Pei Chen",
+  "license": "MIT",
+  "devDependencies": {
+    "surge": "^0.18.0"
+  },
+  "dependencies": {
+  }
+}
