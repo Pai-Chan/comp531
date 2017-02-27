@@ -1,0 +1,12 @@
+{
+	"articles": [
+		{"articleId": "1000", "author": "Mr1000", "text": "Text One", "image": "images/p1694625178.jpg", "timestamp": 1488210000406},
+		{"articleId": "1001", "author": "Mr1001", "text": "Text Two", "image": "images/p1693430071.jpg", "timestamp": 1488210110406},
+		{"articleId": "1002", "author": "Mr1002", "text": "Text Three", "image": "", "timestamp": 1488210220406},
+		{"articleId": "1003", "author": "Mr1003", "text": "Text Four", "image": "", "timestamp": 1488210330406},
+		{"articleId": "1004", "author": "Mr1004", "text": "Text Five", "image": "images/p1430000737.jpg", "timestamp": 1488210440406},
+		{"articleId": "1005", "author": "Mr1005", "text": "Text Six", "image": "images/p2179036751.jpg", "timestamp": 1488210550406},
+		{"articleId": "1006", "author": "Mr1006", "text": "Text Seven", "image": "", "timestamp": 1488210660406},
+		{"articleId": "1007", "author": "Mr1007", "text": "Text Eight", "image": "", "timestamp": 1488210770406}
+	]
+}

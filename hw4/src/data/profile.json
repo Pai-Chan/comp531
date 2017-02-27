@@ -1,0 +1,11 @@
+{
+	"profileItems": {
+		"displayName": "A_Cool_Display_Name",
+		"avatar": "images/p2408565537.jpg",
+		"email": "example@gmail.com",
+		"zipcode": "77005",
+		"birthdateTimestamp": 867110770406,
+		"headline": "I have many friends!",
+		"phoneNumber": "123-456-7890" 
+	}
+}

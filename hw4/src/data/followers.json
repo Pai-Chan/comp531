@@ -1,0 +1,7 @@
+{
+	"followers": [
+		{"username": "Lucy", "avatar": "./images/p2408565537.jpg", "headline": "I am happy because I have a new friend!"},
+		{"username": "Lily", "avatar": "./images/p2408565537.jpg", "headline": "I am happy because I make a new friend!"},
+		{"username": "Linda", "avatar": "./images/p2408565537.jpg", "headline": "I am sad because I have no friend!"}
+	]
+}
