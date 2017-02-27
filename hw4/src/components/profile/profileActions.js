@@ -5,79 +5,9 @@ const logger = createLogger()
 
 const profileData = require('../../data/profile.json')
 
-// export const getDisplayName = (username) => {
-// 	return (dispatch) => {
-// 		return resource('GET', `${username}/displayName`).
-// 		then((response) => {
-// 			dispatch({type:ActionType.SET_PROFILE_ITEM, profile:{displayName: 'A_Cool_Display_Name'}})
-// 		})
-// 	}
-// }
-
-// export const getProfileAvatar = (username) => {
-// 	return (dispatch) => {
-// 		return resource('GET', `${username}/avatar`)
-// 		.then((response) => {
-// 			dispatch({type:ActionType.SET_PROFILE_ITEM, profile:{avatar: 'images/p2408565537.jpg'}})
-// 		})
-// 	}
-// }
-
-// export const getProfileEmail = (username) => {
-// 	return (dispatch) => {
-// 		return resource('GET', `${username}/email`)
-// 		.then((response) => {
-// 			dispatch({type:ActionType.SET_PROFILE_ITEM, profile:{email: 'example@gmail.com'}})
-// 		})
-// 	}
-// }
-
-// export const getProfileZipcode = (username) => {
-// 	return (dispatch) => {
-// 		return resource('GET', `${username}/zipcode`)
-// 		.then((response) => {
-// 			dispatch({type:ActionType.SET_PROFILE_ITEM, profile:{zipcode: '77005'}})
-// 		})
-// 	}
-// }
-
-// export const getProfileBirthdate = (username) => {
-// 	return (dispatch) => {
-// 		return resource('GET', `${username}/birthdate`)
-// 		.then((response) => {
-// 			dispatch({type:ActionType.SET_PROFILE_ITEM, profile:{birthdate: new Date().toString()}})
-// 		})
-// 	}
-// }
-
-// export const getProfileHeadline = (username) => {
-// 	return (dispatch) => {
-// 		return resource('GET', `${username}/headline`)
-// 		.then((response) => {
-// 			dispatch({type: ActionType.SET_PROFILE_ITEM, profile:{headline: 'I am very happy.'}})
-// 		})
-// 	}
-// }
-
-// export const getProfilePhoneNumber = (username) => {
-// 	return (dispatch) => {
-// 		return resource('GET', `${username}/phoneNumber`)
-// 		.then((response) => {
-// 			dispatch({type: ActionType.SET_PROFILE_ITEM, profile:{phoneNumber: '123-456-7890'}})
-// 		})
-// 	}
-// }
 export const getProfile = (username) => {
 	return (dispatch) => {
-		// return Promise.all([
-			// getDisplayName(username)(dispatch),
-			// getProfileAvatar(username)(dispatch),
-			// getProfileEmail(username)(dispatch),
-			// getProfileZipcode(username)(dispatch),
-			// getProfileBirthdate(username)(dispatch),
-			// getProfileHeadline(username)(dispatch),
-			// getProfilePhoneNumber(username)(dispatch)
-		// ])
+
 		dispatch({type:ActionType.SET_PROFILE_ITEM, profile: profileData.profileItems})
 	}
 }
