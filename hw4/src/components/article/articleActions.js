@@ -17,7 +17,7 @@ export const postNewArticle = (username, newArticle) => {
 		resource('POST', `${username}/newArticle`)
 		.then((response) => {
 			let timestamp = new Date().valueOf()
-			dispatch({type:ActionType.ADD_ARTICLE_PART, articleId: 2000, part: {author: username, text: newArticle.value, image:'', timestamp}})
+			dispatch({type:ActionType.ADD_ARTICLE_PART, articleId: 2000, part: {articleId: 2000, author: username, text: newArticle.value, image:'', timestamp}})
 			newArticle.value = ""
 
 		})
