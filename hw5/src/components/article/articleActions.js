@@ -12,7 +12,11 @@ export const filterArticles = (filterWord) => {
 //post new article
 export const postNewArticle = (username, newArticle) => {
 	return (dispatch) => {
-		resource('POST', `article`, {text: newArticle.value})
+		if (newArticle.value == '') {
+			dispatch({type:ActionType.ERRORMESSAGE, message:'Empty article text is not allowed.'})
+			return
+		}
+		return resource('POST', `article`, {text: newArticle.value})
 		.then((response) => {
 			response.articles.forEach((article) => {
 				dispatch({
@@ -34,7 +38,7 @@ export const postNewArticle = (username, newArticle) => {
 //put json data from the server side of articles into state
 export const getArticles = (username) => {
 	return (dispatch) => {
-		resource('GET', `articles`)
+		return resource('GET', `articles`)
 		.then((response) => {
 			response.articles.forEach((article) => {
 				dispatch({

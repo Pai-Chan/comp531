@@ -95,6 +95,7 @@ export const updateEmail = (email) => {
 		return resource('PUT', 'email', {email})
 		.then((response) => {
 			dispatch({type:ActionType.SET_PROFILE_ITEM, profile: {email: response.email}})
+			dispatch({type:ActionType.SUCCESSMESSAGE, message:'Successful Update.'})
 		}).catch((err) => {
 			dispatch({type:ActionType.ERRORMESSAGE, message:`There was an error when updating email. ${err}`})
 		})
@@ -106,6 +107,7 @@ export const updateHeadline = (headline) => {
 		return resource('PUT', 'headline', {headline})
 		.then((response) => {
 			dispatch({type:ActionType.SET_PROFILE_ITEM, profile: {headline: response.headline}})
+			dispatch({type:ActionType.SUCCESSMESSAGE, message:'Successful Update.'})
 		}).catch((err) => {
 			dispatch({type:ActionType.ERRORMESSAGE, message:`There was an error when updating headline. ${err}`})
 			throw new Error()
@@ -118,6 +120,7 @@ export const updateZipcode = (zipcode) => {
 		resource('PUT', 'zipcode', {zipcode})
 		.then((response) => {
 			dispatch({type:ActionType.SET_PROFILE_ITEM, profile: {zipcode: response.zipcode}})
+			dispatch({type:ActionType.SUCCESSMESSAGE, message:'Successful Update.'})
 		}).catch((err) => {
 			dispatch({type:ActionType.ERRORMESSAGE, message:`There was an error when updating zipcode. ${err}`})
 		})
@@ -127,6 +130,9 @@ export const updateZipcode = (zipcode) => {
 export const updatePassword = (password) => {
 	return (dispatch) => {
 		resource('PUT', 'password', {password})
+		.then((response) => {
+			dispatch({type:ActionType.SUCCESSMESSAGE, message:'Successful Update.'})
+		})
 		.catch((err) => {
 			dispatch({type:ActionType.ERRORMESSAGE, message:`There was an error when updating password. ${err}`})
 		})
@@ -157,7 +163,10 @@ export const updateProfile = (username, updatedFields) => {
 				switch(key) {
 					case 'email':
 						if (!/^[_a-z0-9]+@([_a-z0-9]+\.)+[a-z0-9]{2,3}$/.test(profile[key])) {
-							dispatch({type:ActionType.ERRORMESSAGE, message: "A valid email address should contain @. After @, there should be a valid domain name."})
+							dispatch({
+								type:ActionType.ERRORMESSAGE, 
+								message: "A valid email address should contain @. After @, there should be a valid domain name which is two or three characters."
+							})
 							isValidForm = false
 							return							
 						}
@@ -206,8 +215,7 @@ export const updateProfile = (username, updatedFields) => {
 				updatedFields[key].value = ""
 			})
 
-			return Promise.all(prms).then(() => {
-			})		
+			return Promise.all(prms)
 		}
 	}
 }
