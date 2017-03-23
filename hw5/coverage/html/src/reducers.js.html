@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/reducers.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> reducers.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">87.06% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>74/85</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">89.09% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>49/55</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.91% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80.36% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>45/56</span>
+      </div>
+      <div class='fl pad1y'>
+        <span class="strong">6 statements, 1 function, 3 branches</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { combineReducers } from 'redux'
+import ActionType from './actions'
+&nbsp;
+import createLogger from 'redux-logger'
+const logger = createLogger()
+&nbsp;
+export function shared(state = {location:'', errorMessage:'', successMessage:''}, action){
+	let cleanMessage = {errorMessage:'', successMessage:''}
+	switch(action.type) {
+		case ActionType.NAV2MAIN:
+			return {...state, ...cleanMessage, location: 'MAIN_PAGE'}
+		case ActionType.NAV2PROFILE:
+			return {...state, ...cleanMessage, location: 'PROFILE_PAGE'}
+		case ActionType.NAV2LANDING:
+			return {...state, ...cleanMessage, location: 'LANDING_PAGE'}
+		case ActionType.ERRORMESSAGE:
+			return {...state, ...cleanMessage, errorMessage: action.message}
+		case ActionType.SUCCESSMESSAGE:
+			return {...state, ...cleanMessage, successMessage: action.message}
+		default:
+			return {...state, ...cleanMessage}
+	}
+}
+&nbsp;
+export function landing(state = { username: '' }, action) {
+	switch(action.type) {
+		case ActionType.LOGIN:
+			return {...state, username: action.username}
+		case ActionType.LOGOUT:
+			return {...state, username: ''}
+		default:
+			return state
+	}
+}
+&nbsp;
+export function profile(state = {}, action) {
+	switch(action.type) {
+		case ActionType.SET_PROFILE_ITEM:
+			let updatedState = Object.assign({}, state)
+			Object.keys(action.profile).forEach((key) =&gt; {
+				updatedState[key] = action.profile[key] 
+			})
+			// for (var property in action.profile) {
+			// 	updatedState[property] = action.profile[property]
+			// }
+			return updatedState
+		default:
+			return state
+	}
+}
+&nbsp;
+export function followeds(state = {}, action) {
+	switch(action.type) {
+		case <span class="branch-0 cbranch-no" title="branch not covered" >ActionType.ADD_FOLLOWED_ITEM:</span>
+			let <span class="cstat-no" title="statement not covered" >updatedState = Object.assign({}, state)</span>
+			if (<span class="cstat-no" title="statement not covered" >!updatedState[action.username]) {</span>
+				updatedState[<span class="cstat-no" title="statement not covered" >action.username] = {}</span>
+			}
+			let <span class="cstat-no" title="statement not covered" >userProfile = updatedState[action.username]</span>
+			Object.<span class="cstat-no" title="statement not covered" >keys(action.item).forEach(<span class="fstat-no" title="function not covered" >(key) =&gt; {</span></span>
+				userProfile[<span class="cstat-no" title="statement not covered" >key] = action.item[key]</span>
+			})
+			return <span class="cstat-no" title="statement not covered" >updatedState</span>
+		case <span class="branch-1 cbranch-no" title="branch not covered" >ActionType.REMOVE_FOLLOWED:</span>
+			let <span class="cstat-no" title="statement not covered" >deductedState = Object.assign({}, state)</span>
+			delete <span class="cstat-no" title="statement not covered" >deductedState[action.username]</span>
+			return <span class="cstat-no" title="statement not covered" >deductedState</span>
+		default:
+			return state
+	}
+}
+&nbsp;
+export function articles(state = {}, action) {
+	switch(action.type) {
+		case ActionType.ADD_ARTICLE_PART:
+			let updatedState = Object.assign({}, state)
+			if (<span class="missing-if-branch" title="else path not taken" >E</span>!updatedState[action.articleId]) {
+				updatedState[action.articleId] = {}
+			}
+			let article = updatedState[action.articleId]
+			Object.keys(action.part).forEach((key) =&gt; {
+				article[key] = action.part[key] 
+			})
+			// for (var property in action.part) {
+			// 	article[property] = action.part[property]
+			// }
+			return updatedState
+		case <span class="branch-1 cbranch-no" title="branch not covered" >ActionType.CLEAR_ALL_ARTICLES:</span>
+			return <span class="cstat-no" title="statement not covered" >{}</span>
+		default:
+			return state
+	}
+}
+&nbsp;
+export function custom(state = {filterWord:''}, action) {
+	switch(action.type) {
+		case ActionType.SET_FILTERWORD:
+			return {...state, filterWord: action.filterWord}
+		default:
+			return state
+	}
+}
+&nbsp;
+&nbsp;
+const Reducer = combineReducers({
+	shared, landing, profile, followeds, articles, custom
+})
+&nbsp;
+export default Reducer
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Mar 22 2017 22:42:13 GMT-0500 (CDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
