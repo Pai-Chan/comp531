@@ -14,7 +14,7 @@ export const filterArticles = (filterWord) => {
 //post new article, currently new article Id is 2000
 export const postNewArticle = (username, newArticle) => {
 	return (dispatch) => {
-		resource('POST', `${username}/newArticle`)
+		resource('POST', '/postNewArticle')
 		.then((response) => {
 			let timestamp = new Date().valueOf()
 			dispatch({type:ActionType.ADD_ARTICLE_PART, articleId: 2000, part: {articleId: 2000, author: username, text: newArticle.value, image:'', timestamp}})
@@ -27,7 +27,7 @@ export const postNewArticle = (username, newArticle) => {
 //put json data of articles into state
 export const getArticles = (username) => {
 	return (dispatch) => {
-		resource('GET', `${username}/articles`)
+		resource('GET', `articles/${username}`)
 		.then((response) => {
 
 			let articlesList = initialArticles.articles
