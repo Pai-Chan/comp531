@@ -1,0 +1,4 @@
+{
+	"netid": "pc30",
+	"mongourl": "mongodb://pc30:1@ds145380.mlab.com:45380/pc30comp531"
+}
