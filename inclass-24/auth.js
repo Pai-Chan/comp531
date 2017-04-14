@@ -59,7 +59,7 @@ const actRegister = (req, res) => {
 	addUser(req.body.username, req.body.password)
 	res.status(200).send({
 		username: username,
-		result: 'Success'
+		result: 'success'
 	})
 
 }
