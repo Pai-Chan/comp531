@@ -80,7 +80,7 @@ const actLogin = (req, res) => {
 		redis.hmset(sessionId, userObj)
 
 		res.cookie('sid', sessionId, {maxAge: 3600 * 1000, httpOnly: true})
-		res.send({username: userObj.username, status: 'success'})
+		res.send({username: userObj.username, result: 'success'})
 	} else {
 		res.status(401).send('Unauthorized')
 	}
