@@ -1,0 +1,16 @@
+What did you hope to learn but did not?
+Apache and Ngnix related.
+
+What did you really enjoy learning about?
+JavaScript Programming
+
+What worked well in the course? and how?
+Instructor replies Piazza questions timely, providing helpful solutions.
+
+What did not work well in the course and how might it be improved?
+Trying to switch from OOP mind to functional programming is hard. 
+More comparison examples shown or more exercises will be better.
+
+What could I have done to help you more, presentation of material, design of in class
+exercises, goals of projects – and be specific please!
+Programming style(details)' suggestion.
